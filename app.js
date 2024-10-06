@@ -489,7 +489,7 @@ function animateVenus() {
     venusLabel.position.copy(venus.position.clone().add(new THREE.Vector3(0, 25, 0))); // Update the Earth label position
 }
 function animateMars() {
-    mars.angle += 0.009 * animationearth; // Adjust Earth's angle in orbit
+    mars.angle += 0.003 * animationearth; // Adjust Earth's angle in orbit
     mars.position.x = 140 * Math.cos(mars.angle); // Update Earth's X position
     mars.position.z = 120 * Math.sin(mars.angle); // Update Earth's Z position
     marsLabel.position.copy(mars.position.clone().add(new THREE.Vector3(0, 25, 0))); // Update the Earth label position

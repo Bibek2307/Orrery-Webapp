@@ -268,9 +268,9 @@ async function fetchNEOs(startIndex = 0) {
 
         // Sort the NEOs by their miss distance (closest to farthest)
         const sortedNEOs = neosData.sort((a, b) => {
-            const distanceA = parseFloat(a.close_approach_data[0].miss_distance.kilometers);
-            const distanceB = parseFloat(b.close_approach_data[0].miss_distance.kilometers);
-            return distanceA - distanceB;
+            const distanceA = a.close_approach_data?.[0]?.miss_distance?.kilometers || Infinity; // Default to Infinity if missing
+            const distanceB = b.close_approach_data?.[0]?.miss_distance?.kilometers || Infinity; // Default to Infinity if missing
+            return parseFloat(distanceA) - parseFloat(distanceB);
         });
         const neoTableData = [];
 
